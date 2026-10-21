@@ -1,0 +1,144 @@
+Index: journal.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># A place to keep my ideas and problems I encounter throughout\n\n## Intitial thoughts\nSome questions arise about this project, starting this out im curious on how we use the matricies for RGB values to handoff to the Neural Network to identify against different backgrounds, hands orientation, and skin colors. \n\nMedia Pipe seems to be the main driver for this project, where the program will capture frames from a live feed and pass that through MediaPipe. MP (Media Pipe) then passes an x,y value for list of different identified coordinates. When that is returned we can identify a gesture to then activate a command. \n\n# CursorControl.py\nSeems to be a straightforward application that uses cv2 to capture video feed from connected cameras. \nSome issues I ran into were that the tutorial i used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions. \nI could try and see what updated on the mediapipe side but for ease of following along with the tutorial, \nI downgraded my python environment to 3.11 to best match the results shown.\n\nI was able to gather an image from CV2 and pass it through mediapipe\nwhich then found landmarks on my hand and created points just based off the matricies\nof RGB off each frame of the video.\nThen overlayed a connection map of each landmark. \n![CV2toMP.png](image-assets/CV2toMP.png)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/journal.md b/journal.md
+--- a/journal.md	(revision 286edc1f53380fa377bf51e90b261ba44a89357b)
++++ b/journal.md	(date 1792609281342)
+@@ -14,5 +14,5 @@
+ I was able to gather an image from CV2 and pass it through mediapipe
+ which then found landmarks on my hand and created points just based off the matricies
+ of RGB off each frame of the video.
+-Then overlayed a connection map of each landmark. 
++Then over-layered a connection map of each landmark. 
+ ![CV2toMP.png](image-assets/CV2toMP.png)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/image-assets/CV2toMP.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/CursorControl.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/CursorControl.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/journal.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/journal.md\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/requirements.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/requirements.txt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;chrisrodi&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/chrisrodi/GestureRecognition.git&quot;,\n    &quot;accountId&quot;: &quot;94a8e28d-41ef-46cc-8357-430c28bf7730&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2,\n  &quot;fromUser&quot;: false\n}</component>\n  <component name=\"ProjectId\" id=\"3L0dI7H6uX95onUHdLOtRcoKslw\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;Python.CursorControl.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\n    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/image-assets\" />\n    </key>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.10315.174\" />\n        <option value=\"bundled-python-sdk-eff1e8def5f5-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.10315.174\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\" />\n      <created>1792594836715</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1792594836715</updated>\n      <workItem from=\"1792594837729\" duration=\"3215000\" />\n      <workItem from=\"1792601614630\" duration=\"5838000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/HandRecognition$CursorControl.coverage\" NAME=\"CursorControl Coverage Results\" MODIFIED=\"1792607342303\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 286edc1f53380fa377bf51e90b261ba44a89357b)
++++ b/.idea/workspace.xml	(date 1792609281367)
+@@ -5,11 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="9e957262-212d-4cbc-9e0c-7b28679fdd48" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/image-assets/CV2toMP.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/CursorControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/CursorControl.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/journal.md" beforeDir="false" afterPath="$PROJECT_DIR$/journal.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -85,7 +82,8 @@
+       <option name="presentableId" value="Default" />
+       <updated>1792594836715</updated>
+       <workItem from="1792594837729" duration="3215000" />
+-      <workItem from="1792601614630" duration="5838000" />
++      <workItem from="1792601614630" duration="6130000" />
++      <workItem from="1792608045943" duration="1224000" />
+     </task>
+     <servers />
+   </component>
+@@ -93,6 +91,6 @@
+     <option name="version" value="3" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/HandRecognition$CursorControl.coverage" NAME="CursorControl Coverage Results" MODIFIED="1792607342303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/HandRecognition$CursorControl.coverage" NAME="CursorControl Coverage Results" MODIFIED="1792608431190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1792608632381)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]/shelved.patch	(date 1792608632381)
+@@ -0,0 +1,61 @@
++Index: journal.md
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+># A place to keep my ideas and problems I encounter throughout\n\n## Intitial thoughts\nSome questions arise about this project, starting this out im curious on how we use the matricies for RGB values to handoff to the Neural Network to identify against different backgrounds, hands orientation, and skin colors. \n\nMedia Pipe seems to be the main driver for this project, where the program will capture frames from a live feed and pass that through MediaPipe. MP (Media Pipe) then passes an x,y value for list of different identified coordinates. When that is returned we can identify a gesture to then activate a command. \n\n# CursorControl.py\nSeems to be a straightforward application that uses cv2 to capture video feed from connected cameras. Some issues I ran into were that the tutorial i used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions I could try and see what updated on the mediapipe side but for ease of following along with the tutorial, I downgraded my python environment to best match the results shown.\n\nI was able to gather an image from CV2 and pass it through mediapipe which then found landmarks on my hand and created points just based off the matricies of RGB off each frame of the video. Then overlayed a connection map of each land mark. \n![CV2toMP.png](image-assets/CV2toMP.png)
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/journal.md b/journal.md
++--- a/journal.md	(revision 952921ae38819c148152ad1ab83024ad1a3509f0)
+++++ b/journal.md	(date 1792608188540)
++@@ -6,7 +6,7 @@
++ Media Pipe seems to be the main driver for this project, where the program will capture frames from a live feed and pass that through MediaPipe. MP (Media Pipe) then passes an x,y value for list of different identified coordinates. When that is returned we can identify a gesture to then activate a command. 
++ 
++ # CursorControl.py
++-Seems to be a straightforward application that uses cv2 to capture video feed from connected cameras. Some issues I ran into were that the tutorial i used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions I could try and see what updated on the mediapipe side but for ease of following along with the tutorial, I downgraded my python environment to best match the results shown.
+++Seems to be a straightforward application that uses cv2 to capture video feed from connected cameras. Some issues I ran into were that the tutorial I used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions I could try and see what updated on the mediapipe side but for ease of following along with the tutorial, I downgraded my python environment to best match the results shown.
++ 
++ I was able to gather an image from CV2 and pass it through mediapipe which then found landmarks on my hand and created points just based off the matricies of RGB off each frame of the video. Then overlayed a connection map of each land mark. 
++ ![CV2toMP.png](image-assets/CV2toMP.png)
++\ No newline at end of file
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/image-assets/CV2toMP.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/CursorControl.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/CursorControl.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/journal.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/journal.md\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/requirements.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/requirements.txt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;chrisrodi&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/chrisrodi/GestureRecognition.git&quot;,\n    &quot;accountId&quot;: &quot;94a8e28d-41ef-46cc-8357-430c28bf7730&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2,\n  &quot;fromUser&quot;: false\n}</component>\n  <component name=\"ProjectId\" id=\"3L0dI7H6uX95onUHdLOtRcoKslw\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;Python.CursorControl.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\n    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/image-assets\" />\n    </key>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.10315.174\" />\n        <option value=\"bundled-python-sdk-eff1e8def5f5-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.10315.174\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\" />\n      <created>1792594836715</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1792594836715</updated>\n      <workItem from=\"1792594837729\" duration=\"3215000\" />\n      <workItem from=\"1792601614630\" duration=\"5838000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/HandRecognition$CursorControl.coverage\" NAME=\"CursorControl Coverage Results\" MODIFIED=\"1792607342303\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\n  </component>\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 952921ae38819c148152ad1ab83024ad1a3509f0)
+++++ b/.idea/workspace.xml	(date 1792608410300)
++@@ -5,11 +5,8 @@
++   </component>
++   <component name="ChangeListManager">
++     <list default="true" id="9e957262-212d-4cbc-9e0c-7b28679fdd48" name="Changes" comment="">
++-      <change afterPath="$PROJECT_DIR$/image-assets/CV2toMP.png" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/CursorControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/CursorControl.py" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/journal.md" beforeDir="false" afterPath="$PROJECT_DIR$/journal.md" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -85,7 +82,8 @@
++       <option name="presentableId" value="Default" />
++       <updated>1792594836715</updated>
++       <workItem from="1792594837729" duration="3215000" />
++-      <workItem from="1792601614630" duration="5838000" />
+++      <workItem from="1792601614630" duration="6130000" />
+++      <workItem from="1792608045943" duration="363000" />
++     </task>
++     <servers />
++   </component>
++@@ -93,6 +91,6 @@
++     <option name="version" value="3" />
++   </component>
++   <component name="com.intellij.coverage.CoverageDataManagerImpl">
++-    <SUITE FILE_PATH="coverage/HandRecognition$CursorControl.coverage" NAME="CursorControl Coverage Results" MODIFIED="1792607342303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+++    <SUITE FILE_PATH="coverage/HandRecognition$CursorControl.coverage" NAME="CursorControl Coverage Results" MODIFIED="1792608407795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++   </component>
++ </project>
++\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_21_26__2_50PM__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26__2_50PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26__2_50PM__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1792608712314)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26__2_50PM__Changes_.xml	(date 1792608712314)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]" date="1792608640645" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_21_26,_2_50 PM_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/21/26, 2:50 PM [Changes]" />
++</changelist>
+\ No newline at end of file

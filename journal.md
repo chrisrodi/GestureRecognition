@@ -14,5 +14,5 @@ I downgraded my python environment to 3.11 to best match the results shown.
 I was able to gather an image from CV2 and pass it through mediapipe
 which then found landmarks on my hand and created points just based off the matricies
 of RGB off each frame of the video.
-Then overlayed a connection map of each landmark. 
+Then over-layered a connection map of each landmark. 
 ![CV2toMP.png](image-assets/CV2toMP.png)
