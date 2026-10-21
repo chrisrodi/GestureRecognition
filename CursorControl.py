@@ -4,13 +4,13 @@ import pyautogui
 import math
 import time
 
-
+x=0
 mp_hands=mp.solutions.hands
 mp_drawing=mp.solutions.drawing_utils
 
 # Confidence scores are thresholds for what is detected as a hand on the feed. Anything lower than the selected variable is thrown out.
 # Same process for tracking if a hand moves too fast or is too blurry it will drop  the confidence value. Thus, not registering hand detection.
-hands = mp_hands.Hands(max_num_hands=1,min_detection_confidence=0.7, min_tracking_confidence=0.5)
+hands = mp_hands.Hands(max_num_hands=1,min_detection_confidence=0.7, min_tracking_confidence=0.7)
 
 click_start_time = None
 click_times = []
@@ -69,7 +69,7 @@ while True:
         #distance between thumb and index
         dist=math.hypot(thumb_tip.x -index_tip.x, thumb_tip.x -index_tip.y)
         if dist < 0.04:
-            x=0
+
             print(f"Double Tap {x}")
             x+=1
             if not freeze_cursor:
