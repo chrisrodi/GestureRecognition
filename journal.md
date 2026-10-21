@@ -6,7 +6,7 @@ Some questions arise about this project, starting this out im curious on how we 
 Media Pipe seems to be the main driver for this project, where the program will capture frames from a live feed and pass that through MediaPipe. MP (Media Pipe) then passes an x,y value for list of different identified coordinates. When that is returned we can identify a gesture to then activate a command. 
 
 # CursorControl.py
-Seems to be a straightforward application that uses cv2 to capture video feed from connected cameras. Some issues I ran into were that the tutorial i used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions I could try and see what updated on the mediapipe side but for ease of following along with the tutorial, I downgraded my python environment to best match the results shown.
+Seems to be a straightforward application that uses cv2 to capture video feed from connected cameras. Some issues I ran into were that the tutorial i used was from a few years back and the current python (3.14) did not have MediaPipe.Solutions. I could try and see what updated on the mediapipe side but for ease of following along with the tutorial, I downgraded my python environment to 3.11 to best match the results shown.
 
 I was able to gather an image from CV2 and pass it through mediapipe which then found landmarks on my hand and created points just based off the matricies of RGB off each frame of the video. Then overlayed a connection map of each land mark. 
 ![CV2toMP.png](image-assets/CV2toMP.png)
