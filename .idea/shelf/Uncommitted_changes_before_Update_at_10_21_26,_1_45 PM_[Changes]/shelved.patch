@@ -1,0 +1,131 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># GestureRecognition\nCreating a neural network to work in tandem with a walking quad-legged robot do. This hand recognition will be used to give commands to the quad-legged bot.\n\n## Install packages \nEither activeate the .venv file\n\n`python -m ~/HandRecognition/.venv/bin/activate`\n\nor \n\ninstall the correct packages\n\n`pip install -r ~/HandRecognition/requirements.txt`\n\n\n## Resources I used to create this project\nTutorial Playlist:\nhttps://www.youtube.com/watch?v=5gdOLiKZgus&list=PLJfV3mV9d1ZWOX3YAjFI0ItJ9q2I0ARUY&index=7\n\nOverview on MediaPipe and how it works. \nhttps://www.youtube.com/watch?v=a99p_fAr6e4&list=PL0FM467k5KSyt5o3ro2fyQGt-6zRkHXRv\n\n## Some tools I expect to use for this project include:\n1. MediaPipe \n    https://developers.google.com/edge/mediapipe/solutions/guide#get_started\n2. hand-gesture-recognition-ENG\n    https://github.com/kinivi/hand-gesture-recognition-mediapipe\n3. OpenCV\n    https://docs.opencv.org/5.0/main_modules/api_root.html\n    \n# Libraries planned on using:\n## OpenCV \n\nUsed to capture frames from camera source and then processing the frames.\n\n## MediaPipe\n\nThis is the engine that pre-processes the captured frames to then process hand-tracking, detection of finger orientation events.\n\n## PyAutoGUI\nUsed to control mouse cursor and perform clicks based off of hand gestures.\n\n## PyNput\nUsed for mouse and keyboard events. \n\n## NumPy\nUsed for numerical operations, distance calculations. Majority would be used for array handling.\n\n## Time\nUsed to track time during execution\n\n## Math\nUsing to calculate disance between angles on hand orientations and gestures\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 98a0ff6c5832be00f4e7bf9f9fa19f519d8d717d)
++++ b/README.md	(date 1792603764855)
+@@ -2,7 +2,7 @@
+ Creating a neural network to work in tandem with a walking quad-legged robot do. This hand recognition will be used to give commands to the quad-legged bot.
+ 
+ ## Install packages 
+-Either activeate the .venv file
++Either activate the .venv file
+ 
+ `python -m ~/HandRecognition/.venv/bin/activate`
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/requirements.txt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/README.md\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;chrisrodi&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/chrisrodi/GestureRecognition.git&quot;,\n    &quot;accountId&quot;: &quot;94a8e28d-41ef-46cc-8357-430c28bf7730&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2,\n  &quot;fromUser&quot;: false\n}</component>\n  <component name=\"ProjectId\" id=\"3L0dI7H6uX95onUHdLOtRcoKslw\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\n    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.10315.174\" />\n        <option value=\"bundled-python-sdk-eff1e8def5f5-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.10315.174\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9e957262-212d-4cbc-9e0c-7b28679fdd48\" name=\"Changes\" comment=\"\" />\n      <created>1792594836715</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1792594836715</updated>\n      <workItem from=\"1792594837729\" duration=\"3215000\" />\n      <workItem from=\"1792601614630\" duration=\"2010000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 98a0ff6c5832be00f4e7bf9f9fa19f519d8d717d)
++++ b/.idea/workspace.xml	(date 1792604504087)
+@@ -5,7 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="9e957262-212d-4cbc-9e0c-7b28679fdd48" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/CursorControl.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+     </list>
+@@ -13,6 +13,13 @@
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -38,22 +45,23 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "Python.CursorControl.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
++    "codeWithMe.voiceChat.enabledByDefault": "false",
++    "git-widget-placeholder": "main",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -70,7 +78,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1792594836715</updated>
+       <workItem from="1792594837729" duration="3215000" />
+-      <workItem from="1792601614630" duration="2010000" />
++      <workItem from="1792601614630" duration="2829000" />
+     </task>
+     <servers />
+   </component>
+Index: CursorControl.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CursorControl.py b/CursorControl.py
+new file mode 100644
+--- /dev/null	(date 1792604688408)
++++ b/CursorControl.py	(date 1792604688408)
+@@ -0,0 +1,20 @@
++import cv2
++
++# Try to open and access the available camera on device
++mainCamera = cv2.VideoCapture(0) # this zero trys to access the only camera on device, if more exists you can increment if needed
++
++if not mainCamera.isOpened():
++    print("Cannot open camera")
++    exit()
++while True:
++    ret, frame = mainCamera.read()
++    if not ret:
++        print("Can't receive frame. Exiting ...")
++        break
++
++    frame = cv2.flip(frame, 1)
++    cv2.imshow("Live Video", frame)
++    if (cv2.waitKey(1)==ord('q')):
++        break
++mainCamera.release()
++cv2.destroyAllWindows()
+\ No newline at end of file
