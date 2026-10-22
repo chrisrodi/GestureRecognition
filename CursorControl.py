@@ -4,11 +4,14 @@ import pyautogui
 import math
 import time
 
+from pyscreeze import screenshot
+
 mp_hands=mp.solutions.hands
 mp_drawing=mp.solutions.drawing_utils
 
-# Confidence scores are thresholds for what is detected as a hand on the feed. Anything lower than the selected variable is thrown out.
-# Same process for tracking if a hand moves too fast or is too blurry it will drop  the confidence value. Thus, not registering hand detection.
+# Confidence scores are thresholds for what is detected as a hand on the feed. Anything lower than the selected
+# variable is thrown out. Same process for tracking if a hand moves too fast or is too blurry it will drop  the
+# confidence value. Thus, not registering hand detection.
 hands = mp_hands.Hands(max_num_hands=1,min_detection_confidence=0.7, min_tracking_confidence=0.5)
 
 click_start_time = None
@@ -18,6 +21,13 @@ scroll_mode=False
 freeze_cursor=False
 smoothing=0.3     # 0-1, lower is smoother but slower
 frame_margin=0.15 # portion of frame edge ignored when mapping to screen
+scroll_frames=0     # consecutive frames the scroll gesture has been held (negative = released)
+scroll_hold=5       # frames needed to enter/leave scroll mode, stops flickering
+scroll_anchor_y=0   # hand height when scroll mode started
+scroll_deadzone=0.04
+scroll_speed=150    # scroll amount per frame per unit of hand movement from the anchor
+screenshot_cooldown=2
+last_screenshot_time=0
 
 # Removes moveTo pause between calls so the camera loop is not blocked
 pyautogui.PAUSE=0
@@ -70,9 +80,33 @@ while True:
             for tip in [8,12,16,20]
         ]
 
+        # Scroll gesture (all four fingers up) must be held/released for a few frames before switching modes
+        if sum(fingers)==4:
+            scroll_frames = max(scroll_frames, 0) + 1
+        else:
+            scroll_frames = min(scroll_frames, 0) - 1
+
+        if not scroll_mode and scroll_frames >= scroll_hold:
+            scroll_mode = True
+            # Palm center (landmark 9) is steadier than a fingertip
+            scroll_anchor_y = hand_landmarks.landmark[9].y
+        elif scroll_mode and scroll_frames <= -scroll_hold:
+            scroll_mode = False
+
         #distance between thumb and index
         dist=math.hypot(thumb_tip.x -index_tip.x, thumb_tip.y -index_tip.y)
-        if dist < 0.06:
+        if scroll_mode:
+            # Scroll speed grows with how far the hand moved from where scroll mode started
+            offset = scroll_anchor_y - hand_landmarks.landmark[9].y
+            if abs(offset) > scroll_deadzone:
+                amount = int((offset - math.copysign(scroll_deadzone, offset)) * scroll_speed)
+                if amount:
+                    pyautogui.scroll(amount)
+                label = "Scroll up" if offset > 0 else "Scroll down"
+                cv2.putText(frame,label,(10,90),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            else:
+                cv2.putText(frame,"Scroll mode",(10,90),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2)
+        elif dist < 0.06:
             # Only click once per pinch, cursor stays frozen until fingers separate
             if not freeze_cursor:
                 freeze_cursor = True
@@ -89,11 +123,11 @@ while True:
         else:
             freeze_cursor = False
 
-        #Move cursor with index finger when not pinching
-        if not freeze_cursor:
+        #Move cursor with index finger when not pinching or scrolling
+        if not freeze_cursor and not scroll_mode:
             # Map the inner part of the frame to the full screen so edges are reachable
-            norm_x = min(max((middle_tip.x - frame_margin) / (1 - 2 * frame_margin), 0), 1)
-            norm_y = min(max((middle_tip.y - frame_margin) / (1 - 2 * frame_margin), 0), 1)
+            norm_x = min(max((index_tip.x - frame_margin) / (1 - 2 * frame_margin), 0), 1)
+            norm_y = min(max((index_tip.y - frame_margin) / (1 - 2 * frame_margin), 0), 1)
 
             # Stay 1px off the edges so pyautogui's corner fail-safe does not trigger
             target_x = 1 + norm_x * (screen_w - 3)
@@ -104,6 +138,10 @@ while True:
             screen_y = prev_screen_y + (target_y - prev_screen_y) * smoothing
             pyautogui.moveTo(int(screen_x), int(screen_y))
             prev_screen_x,prev_screen_y=screen_x,screen_y
+    else:
+        # Hand left the frame, drop out of scroll mode so a stale anchor isn't reused
+        scroll_mode=False
+        scroll_frames=0
 
 # Creates window with title and image data
     cv2.imshow("Live Video", frame)
