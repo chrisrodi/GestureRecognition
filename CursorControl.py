@@ -72,7 +72,7 @@ while True:
 
         #distance between thumb and index
         dist=math.hypot(thumb_tip.x -index_tip.x, thumb_tip.y -index_tip.y)
-        if dist < 0.05:
+        if dist < 0.06:
             # Only click once per pinch, cursor stays frozen until fingers separate
             if not freeze_cursor:
                 freeze_cursor = True
