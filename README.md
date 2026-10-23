@@ -3,13 +3,14 @@ Goal is to have this work in tandem with a walking quad-legged robot. This hand 
 
 ![tracking.gif](image-assets/tracking.gif)
 ## Install packages 
-install the correct packages
+install the correct packages (requires pip) 
 
 `pip install -r ~/HandRecognition/requirements.txt`
 
 
 ## Resources I used to create this project
-Tutorial Playlist:
+Tutorial Playlist (Hindi):
+
 https://www.youtube.com/watch?v=5gdOLiKZgus&list=PLJfV3mV9d1ZWOX3YAjFI0ItJ9q2I0ARUY&index=7
 
 Overview on MediaPipe and how it works. 
