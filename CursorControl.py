@@ -69,7 +69,9 @@ while True:
             mp_drawing.draw_landmarks(frame,hand_landmarks,mp_hands.HAND_CONNECTIONS)
 
         # Get Finger Tips
+        # Each index represents a specific landmark point on the hand
         thumb_tip=hand_landmarks.landmark[4]
+        index_knuckle = hand_landmarks.landmark[5]
         index_tip=hand_landmarks.landmark[8]
         middle_tip = hand_landmarks.landmark[12]
         ring_tip = hand_landmarks.landmark[16]
@@ -126,8 +128,8 @@ while True:
         #Move cursor with index finger when not pinching or scrolling
         if not freeze_cursor and not scroll_mode:
             # Map the inner part of the frame to the full screen so edges are reachable
-            norm_x = min(max((index_tip.x - frame_margin) / (1 - 2 * frame_margin), 0), 1)
-            norm_y = min(max((index_tip.y - frame_margin) / (1 - 2 * frame_margin), 0), 1)
+            norm_x = min(max((index_knuckle.x - frame_margin) / (1 - 2 * frame_margin), 0), 1)
+            norm_y = min(max((index_knuckle.y - frame_margin) / (1 - 2 * frame_margin), 0), 1)
 
             # Stay 1px off the edges so pyautogui's corner fail-safe does not trigger
             target_x = 1 + norm_x * (screen_w - 3)
