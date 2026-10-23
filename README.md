@@ -1,6 +1,7 @@
 # GestureRecognition
-Creating a neural network to work in tandem with a walking quad-legged robot do. This hand recognition will be used to give commands to the quad-legged bot.
+Goal is to have this work in tandem with a walking quad-legged robot do. This hand recognition will be used to give commands to the quad-legged bot.
 
+![tracking.gif](image-assets/tracking.gif)
 ## Install packages 
 install the correct packages
 
