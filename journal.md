@@ -16,3 +16,13 @@ which then found landmarks on my hand and created points just based off the matr
 of RGB off each frame of the video.
 Then over-layered a connection map of each landmark. 
 ![CV2toMP.png](image-assets/CV2toMP.png)
+
+
+I finally got reliable tracking of the cursor. An issue I ran into is that when attempting
+to click the cursor would follow my finger tip making the intended cursor click miss when trying to click.
+To address this I ended up making the cusor not follow the finger tip but instead follow the index knuckle.
+When you click (pinch) it would stay stable as you pinch. 
+
+Scrolling was pretty straight forward. There are anchor points that stay with the hand and when certain hand landmarks get close to the screen border it reacts as expected when the entire palm is shown.
+
+![tracking.gif](image-assets/tracking.gif)
